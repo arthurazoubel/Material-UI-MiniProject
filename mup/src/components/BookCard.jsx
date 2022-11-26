@@ -1,20 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Card from '@mui/material/Card'
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
-import { IconButton, Typography } from '@mui/material';
+import { Avatar, IconButton, Typography } from '@mui/material';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 
 
 function BookCard({ book, deleteBook }) {
-
+  
+   
 
     return (
         <>
             <Card elevation={1}>
                 <CardHeader
+                    avatar= {
+                        <Avatar
+                        >
+                            {book.genre[0].toUpperCase()}
+                        </Avatar>
+                    }
                     titleTypographyProps={{fontSize:'23px' }}
                     title={book.title}
                     subheaderTypographyProps={{fontSize:'16px' }}

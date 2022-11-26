@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Home from './pages/Home';
 import Create from './pages/Create';
 import Layout from './components/Layout'
@@ -31,6 +31,7 @@ function App() {
           </Routes>
         </Layout>
       </BrowserRouter>
+
     </ThemeProvider>
   );
 }

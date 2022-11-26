@@ -29,7 +29,7 @@ function Home() {
     <Container maxWidth='lg'>
       <Typography
         sx={{ marginTop: 2, marginBottom:4, textDecorationLine: 'underline' }}
-        variant='h4'
+        variant='h5'
         component='h1'
         gutterBottom
         color='textSecondary'

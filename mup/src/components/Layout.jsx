@@ -3,6 +3,7 @@ import { Drawer, Typography, Box, List, ListItem, ListItemButton, ListItemIcon, 
 import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
 import NoteAddOutlinedIcon from '@mui/icons-material/NoteAddOutlined';
 import { useNavigate, useLocation } from 'react-router-dom';
+import AppBarComponent from './AppBar';
 
 
 const drawerWidth = 240
@@ -27,9 +28,10 @@ function Layout({ children }) {
 
   return (
     <div style={{display: 'flex'}}>
+      <AppBarComponent drawerWidth={drawerWidth} />
       <Drawer sx={{ width: drawerWidth, '& .MuiDrawer-paper': {width: drawerWidth}
         }} variant='permanent' anchor='left'>
-        
+        <Typography sx={{paddingLeft:'15px', marginBottom:'20px', marginTop:'10px', fontSize:'30px'}}>My Books App</Typography>
         <List>
           {menuItems.map((item) => (
             <ListItem
@@ -45,7 +47,7 @@ function Layout({ children }) {
         </List>
 
       </Drawer>
-      <div style={{backgroundColor:'#f9f9f9', width:'100%'}}>  
+      <div style={{backgroundColor:'#f9f9f9', width:'100%', marginTop:'60px'}}>  
         {children}
       </div>
     </div>
