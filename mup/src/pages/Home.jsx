@@ -1,8 +1,10 @@
+import './Home.css'
 import BookCard from '../components/BookCard'
 import { Typography, Grid, Paper } from '@mui/material'
 import { Container } from '@mui/system'
 import React, { useEffect } from 'react'
 import { useState } from 'react'
+import Masonry from 'react-masonry-css'
 
 
 function Home() {
@@ -24,6 +26,11 @@ function Home() {
     setBooks(newBooksList)
   }
 
+  const breakpoints = {
+    default: 3,
+    1300: 2,
+    1000: 1
+  }
   
   return (
     <Container maxWidth='lg'>
@@ -39,13 +46,17 @@ function Home() {
       </Typography>
 
       <Container>
-        <Grid container spacing={3}>
+        <Masonry
+          breakpointCols={breakpoints}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column"
+        >
           {books.map((book) => (
-              <Grid key={book.id} item xs={12} md={6} lg={4}>
+              <div key={book.id}>
                 <BookCard book={book} deleteBook={deleteBook}/>
-              </Grid>
+              </div>
           ))}
-        </Grid>
+       </Masonry>
       </Container>
     </Container>
   )
