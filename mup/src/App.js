@@ -2,6 +2,7 @@ import './App.css';
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import Home from './pages/Home';
 import Create from './pages/Create';
+import Layout from './components/Layout'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { amber, brown } from '@mui/material/colors'
 
@@ -23,10 +24,12 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/create' element={<Create />} />
-        </Routes>
+        <Layout>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/create' element={<Create />} />
+          </Routes>
+        </Layout>
       </BrowserRouter>
     </ThemeProvider>
   );
